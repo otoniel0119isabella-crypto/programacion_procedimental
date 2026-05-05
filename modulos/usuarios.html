@@ -9,4 +9,85 @@
     <h1>USUARIOS</h1>
     <hr>
 </body>
+</html>modify_module_users :
+Add inputs and add styles
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff3e0;
+        }
+        .contenedor {
+            width: 350px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #d84315;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #bf360c;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contenedor">
+    <h2>Pedido Online 🍔🍕🍗</h2>
+    
+    <form action="#" method="post">
+
+        <label>Nombre del cliente:</label>
+        <input type="text" name="nombre" required>
+
+        <label>Teléfono:</label>
+        <input type="tel" name="telefono" required>
+
+        <label>Dirección de entrega:</label>
+        <textarea name="direccion" required></textarea>
+
+        <label>Selecciona tu pedido:</label>
+        <select name="producto" required>
+            <option value="">-- Elegir --</option>
+            <option value="hamburguesa">Hamburguesa 🍔</option>
+            <option value="pizza">Pizza 🍕</option>
+            <option value="alitas">Alitas BBQ 🍗</option>
+        </select>
+
+        <label>Cantidad:</label>
+        <input type="number" name="cantidad" min="1" max="20" required>
+
+        <label>Bebida:</label>
+        <select name="bebida">
+            <option value="">-- Opcional --</option>
+            <option value="gaseosa">Gaseosa</option>
+            <option value="jugo">Jugo natural</option>
+            <option value="agua">Agua</option>
+        </select>
+
+        <label>Comentarios adicionales:</label>
+        <textarea name="comentarios" placeholder="Ej: sin cebolla, extra salsa BBQ..."></textarea>
+
+        <button type="submit">Enviar Pedido</button>
+
+    </form>
+</div>
+
+</body>
 </html>
