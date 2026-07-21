@@ -1,35 +1,13 @@
-function ValidarInformacion() {  
-    
-    let nombre_completo = document.getElementById("nombre_completo").value;
-    let telefono = document.getElementById("telefono").value;
-    let direccion = document.getElementById("direccion").value;
-    let correo_electronico = document.getElementById("correo_electronico").value;
+function ValidarInformacion() {
+    let Nombre = document.getElementById("Nombre").value;
+    let Dirección = document.getElementById("Dirección").value;
+    let Teléfono = document.getElementById("Teléfono").value;
+    let Email = document.getElementById("Email").value;
     let metodo_pago = document.getElementById("metodo_pago").value;
     let pedidos = document.getElementById("pedidos").value;
-    let referencias = document.getElementById("referencias").value;
 
-    if (
-        !nombre_completo ||
-        !telefono ||
-        !direccion ||
-        !correo_electronico ||
-        !metodo_pago ||
-        !pedidos ||
-        !referencias
-    ) {
 
-        console.log(
-            `Información del Cliente:
-            
- Nombre Completo: ${nombre_completo}
- Número de Teléfono: ${telefono}
- Dirección: ${direccion}
- Correo Electrónico: ${correo_electronico}
- Método de Pago: ${metodo_pago}
- Pedidos: ${pedidos}
- Referencias: ${referencias}`
-        );
-
+    if (!Nombre || !Dirección || !Teléfono || !Email || !metodo_pago || !pedidos ) {
         Swal.fire({
             position: "top-end",
             icon: "error",
@@ -37,29 +15,75 @@ function ValidarInformacion() {
             showConfirmButton: false,
             timer: 1500
         });
+    }
 
-    } else {
-
+     else {
         console.log(
-            `Información del Cliente:
-            
- Nombre Completo: ${nombre_completo}
- Número de Teléfono: ${telefono}
- Dirección: ${direccion}
- Correo Electrónico: ${correo_electronico}
- Método de Pago: ${metodo_pago}
- Pedidos: ${pedidos}
- Referencias: ${referencias}`
+            `Informacion del pedido: \n
+            ${Nombre} \n
+            ${Dirección} \n
+            ${Teléfono} \n
+            ${Email} \n
+            ${metodo_pago} \n
+            ${pedidos}`
+
         );
 
-        Swal.fire({
+
+    
+         if (!/^[a-zA-Z]+$/.test(Nombre)) {
+            console.log("nombre debe contener letras")
+            Swal.fire({
+                title: "nombre  debe contener letras",
+                icon: "error"
+            });
+            return;
+        }
+
+
+
+
+        if (!/^\d+$/.test(Teléfono)) {
+            console.log("telefono debe contener numeros")
+            Swal.fire({
+                title: "telefono  debe contener numero",
+                icon: "error"
+            });
+            return;
+        }
+
+
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(Email)) {
+            console.log("email debe contener email")
+            Swal.fire({
+                title: "email  debe contener email",
+                icon: "error"
+            });
+            return;
+        }
+
+
+
+        if (!/^[a-zA-Z]+$/.test(metodo_pago)) {
+            console.log("metodo de pago debe contener letras")
+            Swal.fire({
+                title: "metodo de pago  debe contener letras",
+                icon: "error"
+            });
+            return;
+        }
+
+
+
+
+                 Swal.fire({
             position: "top-end",
             icon: "success",
-            title: "Información Guardada Correctamente",
+            title: "Informacion Guardada Correctamente",
             showConfirmButton: false,
             timer: 1500
         });
-
     }
 }
 

@@ -1,32 +1,16 @@
-function ValidarInformacion() {    
-    
-    let nombre_completo = document.getElementById("nombre_completo").value;
-    let correo_electronico = document.getElementById("correo_electronico").value;
-    let telefono = document.getElementById("telefono").value;
-    let direccion = document.getElementById("direccion").value;
-    let producto_favorito = document.getElementById("producto_favorito").value;
-    let comentarios_adicionales = document.getElementById("comentarios_adicionales").value;
+function ValidarInformacion() {
+    let Nombre = document.getElementById("Nombre").value;
+    let Email = document.getElementById("Email").value;
+    let Número_celular = document.getElementById("Número_celular").value;
+    let fecha_nacimiento = document.getElementById("fecha_nacimiento").value;
+    let Dirección = document.getElementById("Dirección").value;
+    let genero = document.getElementById("genero").value;
+    let contrasena = document.getElementById("contrasena").value;
 
-    if (
-        !nombre_completo ||
-        !correo_electronico ||
-        !telefono ||
-        !direccion ||
-        !producto_favorito ||
-        !comentarios_adicionales
-    ) {
 
-        console.log(
-            `Información del Cliente:
 
-Nombre Completo: ${nombre_completo}
-Correo Electrónico: ${correo_electronico}
-Teléfono: ${telefono}
-Dirección: ${direccion}
-Producto Favorito: ${producto_favorito}
-Comentarios Adicionales: ${comentarios_adicionales}`
-        );
 
+    if (!Nombre || !Email || !Número_celular || !fecha_nacimiento || !Dirección || !genero) {
         Swal.fire({
             position: "top-end",
             icon: "error",
@@ -34,29 +18,82 @@ Comentarios Adicionales: ${comentarios_adicionales}`
             showConfirmButton: false,
             timer: 1500
         });
+    }
 
-    } else {
-
+    else {
         console.log(
-            `Información del Cliente:
+            `Informacion del usuario: \n
+            ${Nombre} \n
+            ${Email} \n
+            ${Número_celular} \n
+            ${fecha_nacimiento} \n
+            ${Dirección} \n
+            ${genero} \n
+            ${contrasena} `
 
-Nombre Completo: ${nombre_completo}
-Correo Electrónico: ${correo_electronico}
-Teléfono: ${telefono}
-Dirección: ${direccion}
-Producto Favorito: ${producto_favorito}
-Comentarios Adicionales: ${comentarios_adicionales}`
         );
+
+        if (!/^[a-zA-Z]+$/.test(Nombre)) {
+            console.log("nombre debe contener letras")
+            Swal.fire({
+                title: "nombre  debe contener letras",
+                icon: "error"
+            });
+            return;
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(Email)) {
+            console.log("email debe contener email")
+            Swal.fire({
+                title: "email  debe contener email",
+                icon: "error"
+            });
+            return;
+        }
+
+
+        if (!/^\d+$/.test(Número_celular)) {
+            Swal.fire({
+                 title: "Numero de cedula debe contener números",
+                icon: "error"
+            });
+            return;
+        }
+
+        
+
+        if (/^(0[1-9]|[12]\d|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/.test(fecha_nacimiento)) {
+            console.log("fecha de nacimiento")
+            Swal.fire({
+                title: "fecha de nacimiento",
+                icon: "error"
+            });
+            return;
+        }
+
+
+
+        if (/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/.test(contrasena)) {
+            console.log("fecha de nacimiento")
+            Swal.fire({
+                title: "fecha de nacimiento",
+                icon: "error"
+            });
+            return;
+        }
+
+
+
 
         Swal.fire({
             position: "top-end",
             icon: "success",
-            title: "Información Guardada Correctamente",
+            title: "Informacion Guardada Correctamente",
             showConfirmButton: false,
             timer: 1500
         });
-
     }
 }
+
 
 document.getElementById("btnGuardar").onclick = ValidarInformacion;

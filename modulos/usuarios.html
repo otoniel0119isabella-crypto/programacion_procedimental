@@ -1,93 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>usuarios</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuarios</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
 </head>
 <body>
-    <h1>USUARIOS</h1>
-    <hr>
-</body>
-</html>modify_module_users :
-Add inputs and add styles
+<nav>
+<nav class="navbar" role="navigation"
+aria-label="main navegation">
+ <div class="navbar-brand">
+    <a class="navbar-item"><p class="title is-3 is-spaced">USUARIO</p>
+    </a>
+ </div>  
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #fff3e0;
-        }
-        .contenedor {
-            width: 350px;
-            margin: 40px auto;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h2 {
-            text-align: center;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 8px;
-            margin: 8px 0;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #d84315;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #bf360c;
-        }
-    </style>
-</head>
-<body>
- <a href="/index.html" class="button" id="boton">Home </a>
-<div class="contenedor">
-    <h2>Pedido Online 🍔🍕🍗</h2>
-    
-    <form action="#" method="post">
+   <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary"href="../index.html">
+            <strong>home</strong>
+          </a>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered">USUARIOS</h1>
+      <hr>
 
-        <label>Nombre del cliente:</label>
-        <input type="text" name="nombre" required>
+      <div class="columns is-centered">
+        <div class="column is-half">
 
-        <label>Teléfono:</label>
-        <input type="tel" name="telefono" required>
 
-        <label>Dirección de entrega:</label>
-        <textarea name="direccion" required></textarea>
+          <div class="field">
+            <label class="label">Nombre</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Nombre completo" id="Nombre">
+            </div>
+          </div>
 
-        <label>Selecciona tu pedido:</label>
-        <select name="producto" required>
-            <option value="">-- Elegir --</option>
-            <option value="hamburguesa">Hamburguesa 🍔</option>
-            <option value="pizza">Pizza 🍕</option>
-            <option value="alitas">Alitas BBQ 🍗</option>
-        </select>
+         
+          <div class="field">
+            <label class="label">contraseña</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input is-success" type="text" placeholder="Usuario" id="contrasena" >
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+            <p class="help is-success">This username is available</p>
+          </div>
 
-        <label>Cantidad:</label>
-        <input type="number" name="cantidad" min="1" max="20" required>
+          
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input is-danger" type="email" placeholder="Email" id="Email" >
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-exclamation-triangle"></i>
+              </span>
+            </div>
+            <p class="help is-danger">This email is invalid</p>
+          </div>
 
-        <label>Bebida:</label>
-        <select name="bebida">
-            <option value="">-- Opcional --</option>
-            <option value="gaseosa">Gaseosa</option>
-            <option value="jugo">Jugo natural</option>
-            <option value="agua">Agua</option>
-        </select>
+          
+          <div class="field">
+            <label class="label">Número de celular</label>
+            <div class="control">
+              <input class="input" type="tel" placeholder="  ingrese su celular" id="Número_celular">
+            </div>
+          </div>
 
-        <label>Comentarios adicionales:</label>
-        <textarea name="comentarios" placeholder="Ej: sin cebolla, extra salsa BBQ..."></textarea>
-    
-        <button type="submit">Enviar Pedido</button>
+          
+          <div class="field">
+            <label class="label">Fecha de nacimiento</label>
+            <div class="control">
+              <input class="input" type="date" id="fecha_nacimiento">
+            </div>
+          </div>
 
-    </form>
-</div>
+         
+          <div class="field">
+            <label class="label">Dirección</label>
+            <div class="control">
+              <input class="input" type="text" placeholder=" ingrese su direccion" id="Dirección">
+            </div>
+          </div>
 
+         
+          <div class="field">
+            <label class="label">Género</label>
+            <div class="control">
+              <div class="select">
+                <select id="genero">
+                  <option value="Masculino">Masculino</option>
+                  <option value="Femenino">Femenino</option>
+                  <option value="Otro">Otro</option>
+                  <option value="Prefiero_decirlo">Prefiero no decirlo</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+        
+
+
+        
+          <div class="field is-grouped is-grouped-centered">
+            <div class="control">
+              <button class="button is-link" id="btnGuardar">aceptar</button>
+            </div>
+            <div class="control">
+              <button class="button is-link is-light">Cancela</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../js/usuarios.js"></script>
 </body>
 </html>

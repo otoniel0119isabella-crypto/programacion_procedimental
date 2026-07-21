@@ -1,71 +1,102 @@
-document.querySelector("form").addEventListener("submit", function(event) {
-    event.preventDefault();
+function ValidarInformacion() {
+    let codigo_producto = document.getElementById("codigo_producto").value;
+    let nombre_producto = document.getElementById("nombre_producto").value;
+    let precio_unidad = document.getElementById("precio_unidad").value;
+    let cantidad_producto = document.getElementById("cantidad_producto").value;
+    let marca_producto = document.getElementById("marca_producto").value;
+    let categoria_producto = document.getElementById("categoria_producto").value;
+    let Unidad_Medida = document.getElementById("Unidad_Medida").value;
 
-    const nombre = document.querySelectorAll("#input")[0].value.trim();
-    const categoria = document.querySelectorAll("#input")[1].value.trim();
-    const precio = document.querySelectorAll("#input")[2].value.trim();
-    const descripcion = document.getElementById("textarea").value.trim();
-    const presentacion = document.querySelectorAll("#input")[3].value.trim();
-    const marca = document.querySelectorAll("#input")[4].value.trim();
-    const cantidad = document.querySelectorAll("#input")[5].value.trim();
 
-  
-    if (nombre === "") {
-        alert("Debe ingresar el nombre del producto.");
-        return;
+    if (!codigo_producto || !nombre_producto || !precio_unidad || !cantidad_producto || !marca_producto || !categoria_producto || !Unidad_Medida) {
+        Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "Campos Incompletos",
+            showConfirmButton: false,
+            timer: 1500
+        });
     }
 
-    if (categoria === "") {
-        alert("Debe ingresar la categoría.");
-        return;
+     else {
+        console.log(
+            `Informacion del Producto: \n
+            ${codigo_producto} \n
+            ${nombre_producto} \n
+            ${precio_unidad} \n
+            ${cantidad_producto} \n
+            ${marca_producto} \n
+            ${categoria_producto} \n
+            ${Unidad_Medida}`
+        );
+
+        if (!/^\d+$/.test(codigo_producto)) {
+            Swal.fire({
+                 title: "Codigo del producto debe contener números",
+                icon: "error"
+            });
+            return;
+        }
+        
+        if (!/^[a-zA-Z]+$/.test(nombre_producto)) {
+            console.log("nombre del producto debe contener letras")
+            Swal.fire({
+                title: "nombre del producto debe contener letras",
+                icon: "error"
+            });
+            return;
+        }
+
+        if (!/^\d+$/.test(precio_unidad)) {
+            Swal.fire({
+                 title: "precio de unidad  debe contener números",
+                icon: "error"
+            });
+            return;
+        }
+
+        
+
+        if (!/^\d+$/.test(cantidad_producto)) {
+            Swal.fire({
+                 title: "cantidad de unidad   debe contener números",
+                icon: "error"
+            });
+            return;
+        }
+
+
+
+        if (!/^[a-zA-Z]+$/.test(categoria_producto)) {
+            console.log("categoria del producto debe contener letras")
+            Swal.fire({
+                title: "categoria del producto debe contener letras",
+                icon: "error"
+            });
+            return;
+        }
+
+
+        if (!/^[a-zA-Z]+$/.test(Unidad_Medida)) {
+            console.log("Unidad de Medida debe contener letras")
+            Swal.fire({
+                title: "Unidad de Medida debe contener letras",
+                icon: "error"
+            });
+            return;
+        }
+    
+
+
+         Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Informacion Guardada Correctamente",
+            showConfirmButton: false,
+            timer: 1500
+        });
     }
+}
 
-    if (precio === "") {
-        alert("Debe ingresar el precio.");
-        return;
-    }
 
-    if (descripcion === "") {
-        alert("Debe ingresar la descripción.");
-        return;
-    }
-
-    if (presentacion === "") {
-        alert("Debe ingresar la presentación.");
-        return;
-    }
-
-    if (marca === "") {
-        alert("Debe ingresar la marca.");
-        return;
-    }
-
-    if (cantidad === "") {
-        alert("Debe ingresar la cantidad.");
-        return;
-    }
-
-  
-    const producto = {
-        nombre,
-        categoria,
-        precio,
-        descripcion,
-        presentacion,
-        marca,
-        cantidad
-    };
-
-    console.log(producto);
-
-    alert(
-        "Producto guardado:\n\n" +
-        "Nombre: " + producto.nombre + "\n" +
-        "Categoría: " + producto.categoria + "\n" +
-        "Precio: " + producto.precio + "\n" +
-        "Descripción: " + producto.descripcion + "\n" +
-        "Presentación: " + producto.presentacion + "\n" +
-        "Marca: " + producto.marca + "\n" +
-        "Cantidad: " + producto.cantidad
-    );
-});
+document.getElementById("btnGuardar").onclick = ValidarInformacion;

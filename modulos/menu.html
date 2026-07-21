@@ -4,126 +4,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú</title>
-
-    <!-- Bulma (IMPORTANTE) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Menu</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
 </head>
 
 <body>
-
-    <section class="section">
-        <div class="container">
-            <a href="/index.html" class="button" id="boton">Home </a>
-            <h1 class="title has-text-centered">MENÚ</h1>
-            <hr>
-
-            <!-- FILA 1 -->
-            <div class="columns">
-
-                <!-- PIZZA -->
-                <div class="column">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-48x48">
-                                        <img
-                                            src="https://www.hola.com/horizon/landscape/a17cd68660e0-pizza-hawaiana-t.jpg">
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <p class="title is-4">Pizza Hawaiana</p>
-                                    <p class="subtitle is-6">
-                                        Pizza artesanal con base de masa crujiente, salsa de tomate casera, queso
-                                        mozzarella derretido, jamón y piña fresca, logrando un equilibrio perfecto entre
-                                        lo dulce y lo salado.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ALITAS -->
-                <div class="column">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-48x48">
-                                        <img
-                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcyRV9QY7cvl5QlRPZLNWD5iKI0idqMZgnwg&s">
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <p class="title is-4">Alitas BBQ</p>
-                                    <p class="subtitle is-6">
-                                        Alitas de pollo doradas y jugosas, bañadas en salsa BBQ ahumada con un toque
-                                        dulce y caramelizado, ideales para compartir y disfrutar en cualquier ocasión.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- FILA 2 -->
-            <div class="columns">
-
-                <!-- HAMBURGUESA -->
-                <div class="column">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-48x48">
-                                        <img
-                                            src="https://delination.com/wp-content/uploads/2022/11/Hamburguesa-triple-carne.webp">
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <p class="title is-4">Hamburguesa Triple Carne</p>
-                                    <p class="subtitle is-6">
-                                        Hamburguesa potente con tres capas de carne jugosa, queso derretido, vegetales
-                                        frescos y pan suave, perfecta para los amantes del buen sabor y las porciones
-                                        generosas.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- LASAÑA -->
-                <div class="column">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-48x48">
-                                        <img
-                                            src="https://pastaslamuneca.com/wp-content/uploads/2021/04/lasana-en-salsa-bechamel.webp">
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <p class="title is-4">Lasaña Bechamel</p>
-                                    <p class="subtitle is-6">
-                                        Lasaña suave y cremosa con capas de pasta, carne y una deliciosa salsa bechamel,
-                                        horneada hasta lograr una textura dorada y un sabor irresistible.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
+    <nav class="navbar" role="navigation" aria-label="main navegation">
+        <div class="navbar-brand">
+            <a class="navbar-item">
+                <p class="title is-3 is-spaced">menu</p>
+            </a>
         </div>
-    </section>
+
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <a class="button is-primary" href="../index.html">
+                        <strong>home</strong>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item">
+                MANIZALEÑO CLUB
+            </a>
+        </div>
+
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item">Home</a>
+                <a class="navbar-item">Documentation</a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">More</a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">About</a>
+                        <a class="navbar-item is-selected">Jobs</a>
+                        <a class="navbar-item">Contact</a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item">Report an issue</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FILA 1 -->
+    <div class="columns">
+
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-128x128">
+                                <img src="https://pizzarte.pe/products/pizza-hawaiana">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <p class="title is-4">PIZZA HAWAIANA</p>
+                            <p class="subtitle is-6">
+                                Pizza artesanal con base de masa crujiente, salsa de tomate casera, queso mozzarella
+                                derretido, jamon y piña fresca,logrando un equilibrio perfecto entre lo dulce y lo
+                                salado.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-128x128">
+                                <img src="https://www.kiwilimon.com/receta/pollo-y-carne/pollos/alitas-de-pollo/alitas-bbq-crujientes-bajas-en-calorias">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <p class="title is-4">ALITAS BBQ</p>
+                            <p class="subtitle is-6">
+                                Alitas de pollo doradsd y jugosas, bañadas en salsa BBQ ahumada con un toque dulce y
+                                caramelizado, ideales para compartir y disfrutar en cualquier ocasion.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FILA 2 -->
+    <div class="columns">
+
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-128x128">
+                                <img
+                                    src="https://es.dreamstime.com/hamburguesa-de-queso-triple-con-fundido-vaca-patty-en-una-madera-concepto-comida-r%C3%A1pida-image270064157">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <p class="title is-4">HAMBURGUESA TRIPLE CARNE</p>
+                            <p class="subtitle is-6">
+                                Hamburguesa potente con tres capas de carne jugosa, queso derretido, vegetales frescos y
+                                pan suave, perfecta para los amantes del buen sabor y las porciones generosas
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-128x128">
+                                <img src="https://www.unileverfoodsolutions.es/receta/lasana-con-salsa-bechamel-R90028319.html">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <p class="title is-4">LASAÑA BECHAMEL</p>
+                            <p class="subtitle is-6">
+                                lasaña suave y cremosa con capas de pasta, carne y una deliciosa salsa bechamel,horneada
+                                hasta lograr una textura dorada y un sabor irresistible
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FILA 3 -->
+    <div class="columns">
+
+        <div class="column is-half">
+            <div class="card">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-128x128">
+                                <img
+                                    src="https://nevada.com.co/web/image/product.template/39/image_1920?unique=e6eb408">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <p class="title is-4">GASEOSA</p>
+                            <p class="subtitle is-6">
+                                Bebida refrescante con un buen sabor.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 </body>
 
